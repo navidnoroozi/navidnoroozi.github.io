@@ -152,7 +152,7 @@ function el(tag, cls, html) {
 }
 
 function renderProjects(filter = "all") {
-  const grid = document.getElementById("projectGrid");
+  if (!grid) return;
   grid.innerHTML = "";
 
   const filtered = projects.filter(p =>

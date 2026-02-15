@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Dr. Navid Noroozi</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <div class="brand">
+        <div class="brand__title">Dr. Navid Noroozi</div>
+        <div class="brand__subtitle">Senior R&amp;D Control Engineer</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="pageTitle">Resume (high-level)</h1>
+
+    <div class="twoCol">
+      <div>
+        <h2>Experience highlights</h2>
+        <ul class="bullets">
+          <li>Technical leadership in R&amp;D projects with evolving requirements (agile + prototyping + early validation).</li>
+          <li>Design &amp; implementation of control software and simulation/test setups (MIL/SIL, co-simulation).</li>
+          <li>Distributed control &amp; optimization for networked systems (multi-agent, microgrids).</li>
+          <li>Electric drives and power electronics control (current control, FOC, converter MPC).</li>
+        </ul>
+
+        <h2>Selected focus areas</h2>
+        <div class="cards cards--2">
+          <div class="card">
+            <div class="card__title">Autonomous &amp; Distributed Control</div>
+            <p>Distributed MPC (consensus, microgrids), system-level interfaces, robustness, validation.</p>
+          </div>
+          <div class="card">
+            <div class="card__title">Power Electronics &amp; Drives</div>
+            <p>MPC current control, PLECS co-simulation, FOC PMSM speed control, constraints and stability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tooling / Programming</h2>
+
+        <div class="logoRow">
+          <img src="assets/img/logo-python.png" alt="Python" title="Python" />
+          <img src="assets/img/logo-matlab.png" alt="MATLAB" title="MATLAB/Simulink" />
+          <img src="assets/img/logo-docker.png" alt="Docker" title="Docker" />
+          <img src="assets/img/logo-plecs.png" alt="PLECS" title="PLECS" />
+          <img src="assets/img/logo-dspace.png" alt="dSPACE" title="dSPACE" />
+        </div>
+
+        <div class="skill">
+          <div class="skill__row"><span>Control &amp; MPC</span><span class="muted">advanced</span></div>
+          <div class="bar"><div class="bar__fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill__row"><span>Python (architecture + prototyping)</span><span class="muted">advanced</span></div>
+          <div class="bar"><div class="bar__fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill__row"><span>Power Electronics &amp; Drives</span><span class="muted">advanced</span></div>
+          <div class="bar"><div class="bar__fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill__row"><span>Co-simulation (PLECS/MATLAB)</span><span class="muted">strong</span></div>
+          <div class="bar"><div class="bar__fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill__row"><span>Sensors &amp; Estimation</span><span class="muted">building</span></div>
+          <div class="bar"><div class="bar__fill" style="width:55%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span class="muted">© <span id="year"></span> Dr. Navid Noroozi</span>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

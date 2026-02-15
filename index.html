@@ -16,19 +16,18 @@
       </div>
 
       <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#contact">Contact</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
-      <div class="container hero__grid">
+      <div class="container hero__grid hero__grid--photo">
         <div class="hero__left">
           <h1>System-level control, from theory to robust prototypes.</h1>
           <p class="lead">
@@ -38,49 +37,54 @@
           </p>
 
           <div class="pillrow">
-            <span class="pill">MPC (centralized & distributed)</span>
-            <span class="pill">Power converters & drives</span>
+            <span class="pill">MPC (centralized &amp; distributed)</span>
+            <span class="pill">Power converters &amp; drives</span>
             <span class="pill">Co-simulation (PLECS ↔ Python)</span>
             <span class="pill">ZeroMQ architectures</span>
-            <span class="pill">Estimation & robustness</span>
+            <span class="pill">Estimation &amp; robustness</span>
           </div>
 
           <div class="cta">
-            <a class="btn" href="#projects">View projects</a>
-            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            <a class="btn" href="projects.html">View projects</a>
+            <a class="btn btn--ghost" href="contact.html">Get in touch</a>
+          </div>
+
+          <h2 class="h2tight">Research interests (multidisciplinary)</h2>
+          <div class="iconRow">
+            <div class="iconTile">
+              <img src="assets/img/icon-cloud.png" alt="Cloud / Computing" />
+              <div>Computing</div>
+            </div>
+            <div class="iconTile">
+              <img src="assets/img/icon-control.png" alt="Control / Automation" />
+              <div>Control</div>
+            </div>
+            <div class="iconTile">
+              <img src="assets/img/icon-electricity.png" alt="Electricity / Power" />
+              <div>Power</div>
+            </div>
+            <div class="iconTile">
+              <img src="assets/img/icon-rail.png" alt="Railway / Mobility" />
+              <div>Rail</div>
+            </div>
           </div>
         </div>
 
-        <aside class="hero__card">
-          <div class="card">
-            <div class="card__title">Quick facts</div>
-            <div class="kv">
-              <div class="kv__k">Location</div><div class="kv__v">Munich, Germany</div>
-              <div class="kv__k">Languages</div><div class="kv__v">German, English, Persian</div>
-              <div class="kv__k">Focus</div><div class="kv__v">Autonomy • Power Electronics • Control</div>
-              <div class="kv__k">Tooling</div><div class="kv__v">Python • MATLAB/Simulink • PLECS</div>
-            </div>
-
-            <button id="toggleContacts" class="linklike" type="button">Show contacts</button>
-            <div id="contacts" class="contacts hidden">
-              <div><strong>Email:</strong> <span class="mono">navidnoroozi@gmail.com</span></div>
-              <div><strong>GitHub:</strong> <a href="https://github.com/navidnoroozi" target="_blank" rel="noreferrer">navidnoroozi</a></div>
-              <div><strong>LinkedIn:</strong> <span class="muted">(add link)</span></div>
+        <aside class="hero__photoCard">
+          <div class="photoCard">
+            <img class="profilePhoto" src="assets/img/profile.jpg" alt="Portrait of Dr. Navid Noroozi" />
+            <div class="photoCard__meta">
+              <div class="photoCard__name">Dr. Navid Noroozi</div>
+              <div class="photoCard__role muted">Senior R&amp;D Control Engineer</div>
+              <div class="photoCard__loc muted">Munich, Germany</div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- DISCIPLINE MAP -->
-    <section class="container" id="about">
-      <h2>About</h2>
-      <p>
-        My recent work includes <strong>distributed MPC</strong> in a ZeroMQ REQ/REP architecture, <strong>current sharing</strong> in DC microgrids,
-        <strong>MPC current control</strong> for power converters (finite-set MPC & PWM-MPC), and <strong>PLECS ↔ Python co-simulation</strong>.
-        I enjoy building systems that are both mathematically sound and practically testable.
-      </p>
-
+    <section class="container">
+      <h2>What I build</h2>
       <div class="grid5">
         <div class="chipcard">
           <div class="chipcard__title">Control &amp; Optimization</div>
@@ -92,7 +96,7 @@
         </div>
         <div class="chipcard">
           <div class="chipcard__title">Sensors &amp; Estimation</div>
-          <div class="chipcard__body">State estimation (planned): EKF/UKF, sensor fusion, uncertainty handling.</div>
+          <div class="chipcard__body">State estimation (EKF/UKF) &amp; sensor fusion (planned).</div>
         </div>
         <div class="chipcard">
           <div class="chipcard__title">Mechatronics &amp; Drives</div>
@@ -103,108 +107,22 @@
           <div class="chipcard__body">Converter current control, MMC interests, microgrids, secondary regulation.</div>
         </div>
       </div>
-    </section>
 
-    <!-- RESUME -->
-    <section class="container" id="resume">
-      <h2>Resume (high-level)</h2>
-
-      <div class="twoCol">
-        <div>
-          <h3>Experience highlights</h3>
-          <ul class="bullets">
-            <li>Technical leadership in R&amp;D projects with evolving requirements (agile + prototyping + early validation).</li>
-            <li>Design &amp; implementation of control software and simulation/test setups (MIL/SIL, co-simulation).</li>
-            <li>Distributed control &amp; optimization for networked systems (multi-agent, microgrids).</li>
-            <li>Electric drives and power electronics control (current control, FOC, converter MPC).</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Core technologies</h3>
-
-          <div class="skill">
-            <div class="skill__row"><span>Control &amp; MPC</span><span class="muted">advanced</span></div>
-            <div class="bar"><div class="bar__fill" style="width: 92%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill__row"><span>Python (architecture + prototyping)</span><span class="muted">advanced</span></div>
-            <div class="bar"><div class="bar__fill" style="width: 88%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill__row"><span>Power Electronics &amp; Drives</span><span class="muted">advanced</span></div>
-            <div class="bar"><div class="bar__fill" style="width: 85%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill__row"><span>Co-simulation (PLECS/MATLAB)</span><span class="muted">strong</span></div>
-            <div class="bar"><div class="bar__fill" style="width: 78%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill__row"><span>Sensors &amp; Estimation</span><span class="muted">building</span></div>
-            <div class="bar"><div class="bar__fill" style="width: 55%"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="container" id="projects">
-      <h2>Engineering Projects</h2>
-
-      <div class="filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="distributed">Distributed Control</button>
-        <button class="filter" data-filter="power">Power Electronics</button>
-        <button class="filter" data-filter="drives">Drives</button>
-        <button class="filter" data-filter="cosim">Co-Simulation</button>
-        <button class="filter" data-filter="future">Planned</button>
+      <div class="homeLinks">
+        <a class="cardLink" href="resume.html">→ Resume</a>
+        <a class="cardLink" href="projects.html">→ Projects</a>
+        <a class="cardLink" href="sectors.html">→ Sector positioning</a>
+        <a class="cardLink" href="contact.html">→ Contact</a>
       </div>
 
-      <div id="projectGrid" class="cards"></div>
-    </section>
-
-    <!-- SECTORS -->
-    <section class="container" id="sectors">
-      <h2>Sector-specific positioning</h2>
-      <div class="cards cards--2">
-        <div class="card">
-          <div class="card__title">Automotive</div>
-          <p>Senior R&amp;D Control Engineer specializing in model-based design, MPC, and electric drive / powertrain control for autonomous and electrified systems.</p>
-        </div>
-        <div class="card">
-          <div class="card__title">Railway</div>
-          <p>System-level control architect for safety-critical autonomous and traction systems, with strong validation and co-simulation expertise.</p>
-        </div>
-        <div class="card">
-          <div class="card__title">Robotics</div>
-          <p>Autonomous systems control architect with strengths in distributed optimization, system integration, and estimation/control co-design.</p>
-        </div>
-        <div class="card">
-          <div class="card__title">Energy / Power Electronics / Grid</div>
-          <p>Advanced control engineer for MV/HV power converters and inverter-dominated grids, focusing on current sharing, voltage regulation, and distributed MPC.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="container" id="contact">
-      <h2>Contact</h2>
-      <p>If you’d like to discuss R&amp;D collaboration, technical leadership roles, or a specific problem, feel free to reach out.</p>
-      <div class="contactBox">
-        <div><strong>Email:</strong> <span class="mono">navidnoroozi@gmail.com</span></div>
-        <div><strong>GitHub:</strong> <a href="https://github.com/navidnoroozi" target="_blank" rel="noreferrer">github.com/navidnoroozi</a></div>
-        <div><strong>LinkedIn:</strong> <span class="muted">(add link)</span></div>
-      </div>
       <footer class="footer">
         <span class="muted">© <span id="year"></span> Dr. Navid Noroozi</span>
       </footer>
     </section>
   </main>
 
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

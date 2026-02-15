@@ -162,10 +162,6 @@ function renderProjects(filter = "all") {
   filtered.forEach(p => {
     const card = el("div", "proj");
     card.setAttribute("tabindex", "0");
-    card.addEventListener("click", () => openModal(p));
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") openModal(p);
-    });
 
     card.appendChild(el("div", "proj__title", p.title));
     card.appendChild(el("div", "muted", `${p.status} • ${p.summary}`));
@@ -178,57 +174,10 @@ function renderProjects(filter = "all") {
   });
 }
 
-function openModal(p) {
-  const modal = document.getElementById("modal");
-  const content = document.getElementById("modalContent");
-
-  content.innerHTML = `
-    <h3 style="margin-top:0">${p.title}</h3>
-    <p>${p.summary}</p>
-
-    <h4>Key highlights</h4>
-    <ul>${p.highlights.map(x => `<li>${x}</li>`).join("")}</ul>
-
-    <h4>Next steps</h4>
-    <ul>${p.next.map(x => `<li>${x}</li>`).join("")}</ul>
-
-    <p class="muted">Tip: later you can link each card to a /projects/*.html deep-dive page.</p>
-  `;
-
-  modal.classList.remove("hidden");
-  modal.setAttribute("aria-hidden", "false");
-}
-
-function closeModal() {
-  const modal = document.getElementById("modal");
-  modal.classList.add("hidden");
-  modal.setAttribute("aria-hidden", "true");
-}
-
-function initModalControls() {
-  // Always force modal hidden on page load (safety)
-  closeModal();
-
-  // Close when clicking backdrop or X button
-  document.querySelectorAll('[data-close="true"]').forEach(node => {
-    node.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      closeModal();
-    });
-  });
-
-  // Close on ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
-}
 
 // Call this inside init()
 function init() {
   // ... your other init code ...
-
-  initModalControls();
   renderProjects("all");
 }
 

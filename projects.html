@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Dr. Navid Noroozi</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <div class="brand">
+        <div class="brand__title">Dr. Navid Noroozi</div>
+        <div class="brand__subtitle">Engineering Projects</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="pageTitle">Projects</h1>
+    <p class="muted">A selection of recent work and planned projects. (You can later link each card to a dedicated deep-dive page.)</p>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="distributed">Distributed Control</button>
+      <button class="filter" data-filter="power">Power Electronics</button>
+      <button class="filter" data-filter="drives">Drives</button>
+      <button class="filter" data-filter="cosim">Co-Simulation</button>
+      <button class="filter" data-filter="future">Planned</button>
+    </div>
+
+    <div id="projectGrid" class="cards"></div>
+
+    <footer class="footer">
+      <span class="muted">© <span id="year"></span> Dr. Navid Noroozi</span>
+    </footer>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

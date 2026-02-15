@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sectors — Dr. Navid Noroozi</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <div class="brand">
+        <div class="brand__title">Dr. Navid Noroozi</div>
+        <div class="brand__subtitle">Sector-specific positioning</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="sectors.html">Sectors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="pageTitle">Sectors</h1>
+
+    <div class="cards cards--2">
+      <div class="card">
+        <div class="card__title">Automotive</div>
+        <p>Senior R&amp;D Control Engineer specializing in model-based design, MPC, and electric drive / powertrain control for autonomous and electrified systems.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__title">Railway</div>
+        <p>System-level control architect for safety-critical autonomous and traction systems, with strong validation and co-simulation expertise.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__title">Robotics</div>
+        <p>Autonomous systems control architect with strengths in distributed optimization, system integration, and estimation/control co-design.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__title">Energy / Power Electronics / Grid</div>
+        <p>Advanced control engineer for MV/HV power converters and inverter-dominated grids, focusing on current sharing, voltage regulation, and distributed MPC.</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span class="muted">© <span id="year"></span> Dr. Navid Noroozi</span>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

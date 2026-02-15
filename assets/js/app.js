@@ -205,37 +205,30 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
 }
 
-function init() {
-  // year
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+function initModalControls() {
+  // Always force modal hidden on page load (safety)
+  closeModal();
 
-  // contacts toggle
-  const btn = document.getElementById("toggleContacts");
-  const contacts = document.getElementById("contacts");
-  if (btn && contacts) {
-    btn.addEventListener("click", () => contacts.classList.toggle("hidden"));
-  }
-
-  // filters
-  document.querySelectorAll(".filter").forEach(b => {
-    b.addEventListener("click", () => {
-      document.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
-      b.classList.add("active");
-      renderProjects(b.dataset.filter);
+  // Close when clicking backdrop or X button
+  document.querySelectorAll('[data-close="true"]').forEach(node => {
+    node.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
     });
   });
 
-  // modal close
-  const modal = document.getElementById("modal");
-  modal.addEventListener("click", (e) => {
-    if (e.target && e.target.dataset && e.target.dataset.close) closeModal();
-  });
+  // Close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
+}
 
-  // initial render
+// Call this inside init()
+function init() {
+  // ... your other init code ...
+
+  initModalControls();
   renderProjects("all");
 }
 

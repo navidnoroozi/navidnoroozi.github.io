@@ -87,7 +87,22 @@ a:hover{text-decoration:underline}
   box-shadow: var(--shadow);
   padding:16px;
 }
-.card__title{font-weight:750; margin-bottom:10px}
+/* Sector title with icon */
+.card__title{
+  font-weight:750;
+  margin-bottom:10px;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Sector icon size aligned with text */
+.sectorIcon{
+  height: 1.2em;      /* scales with font size */
+  width: auto;
+  object-fit: contain;
+}
 
 .kv{display:grid; grid-template-columns: 110px 1fr; gap:8px 10px; font-size:.95rem}
 .kv__k{color:var(--muted)}

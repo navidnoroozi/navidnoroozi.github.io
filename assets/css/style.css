@@ -230,7 +230,7 @@ p{color:var(--muted); line-height:1.6}
   align-items:center;
 }
 .logoRow img{
-  height:30px;
+  height:40px;
   width:auto;
   object-fit:contain;
   border:1px solid var(--line);

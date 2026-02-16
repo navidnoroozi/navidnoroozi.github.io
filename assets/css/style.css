@@ -193,7 +193,7 @@ p{color:var(--muted); line-height:1.6}
   overflow:hidden;
 }
 .profilePhoto{
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
   border-radius: 14px;

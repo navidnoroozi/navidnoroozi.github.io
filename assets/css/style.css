@@ -184,7 +184,7 @@ p{color:var(--muted); line-height:1.6}
 
 /* hero with photo */
 .hero__grid--photo{grid-template-columns: 1.2fr .8fr}
-.hero__photoCard{position:relative; max-width: 300px; justify-self: end;}
+.hero__photoCard{position:relative; max-width: 340px; justify-self: end;}
 .photoCard{
   border:1px solid var(--line);
   background: rgba(15,27,49,.55);
@@ -193,7 +193,7 @@ p{color:var(--muted); line-height:1.6}
   overflow:hidden;
 }
 .profilePhoto{
-  width: 80%;
+  width: 100%;
   height: auto;
   display: block;
   border-radius: 14px;

@@ -116,15 +116,15 @@ a:hover{text-decoration:underline}
 
 /* Large home banner */
 .pageBanner--home img{
-  max-height: 320px;
-  object-fit: cover;
+  width:100%;
+  height:auto;
   object-position: center;
 }
 
 /* Slim subpage banner */
 .pageBanner--sub img{
-  max-height: 180px;
-  object-fit: cover;
+  width:100%;
+  height:auto;
   object-position: center;
 }
 

@@ -116,8 +116,8 @@ a:hover{text-decoration:underline}
 
 /* Large home banner */
 .pageBanner--home img{
-  width:100%;
-  height:auto;
+  max-height: 320px;
+  object-fit: cover;
   object-position: center;
 }
 

@@ -97,6 +97,37 @@ a:hover{text-decoration:underline}
   gap:8px;
 }
 
+/* ===== Banner / Header Image ===== */
+.pageBanner{
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.03);
+  margin: 22px 0 28px;
+}
+
+.pageBanner img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Large home banner */
+.pageBanner--home img{
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Slim subpage banner */
+.pageBanner--sub img{
+  max-height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Sector icon size aligned with text */
 .sectorIcon{
   height: 1.2em;      /* scales with font size */

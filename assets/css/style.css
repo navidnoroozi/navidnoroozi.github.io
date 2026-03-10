@@ -97,6 +97,48 @@ a:hover{text-decoration:underline}
   gap:8px;
 }
 
+/* ===== Visitor Insights Section ===== */
+.visitorSection{
+  margin-top: 36px;
+}
+
+.visitorCard{
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.visitorCard__left h3{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.visitorCard__right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.visitorCard__right img{
+  max-width: 100%;
+  height: auto;
+}
+
+.visitorHint{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px){
+  .visitorCard{
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Banner / Header Image ===== */
 .pageBanner{
   width: 100%;

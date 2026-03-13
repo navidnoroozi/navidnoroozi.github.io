@@ -438,6 +438,17 @@ p{color:var(--muted); line-height:1.6}
   font-size: .92rem;
 }
 
+.project-teaser {
+  max-width: 320px;
+  margin: 10px 0;
+}
+
+.project-teaser-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
 @media (max-width: 800px){
   .projectFeature__grid{
     grid-template-columns: 1fr;

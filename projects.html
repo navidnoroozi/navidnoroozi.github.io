@@ -59,15 +59,13 @@
         <article class="projectFeature__card">
           <h3>Project Summary</h3>
           <p>
-            This project investigates a communication-aware distributed model predictive control (DMPC)
-            framework for DC microgrids, where local controllers coordinate power-sharing and voltage regulation
-            while explicitly accounting for communication constraints such as latency, packet loss, bandwidth limits,
-            and asynchronous information exchange.
+            This project develops a communication-aware distributed Model Predictive Control (MPC) framework together with a real-time software prototype for the coordinated operation of DC microgrids. The proposed approach enables voltage regulation and proportional current sharing among multiple converter-interfaced Distributed Generation Units (DGUs).
           </p>
           <p>
-            The goal is to combine distributed optimization, resilient control design, and high-fidelity co-simulation
-            to evaluate how communication quality affects closed-loop performance, stability margins, and scalability
-            in networked energy systems.
+            The control strategy is implemented in a real-time co-simulation environment, where distributed MPC controllers run in Python and communicate via a peer-to-peer publish/subscribe architecture, while the primary converter dynamics and PWM-based PI controllers of DC-DC buck converters are simulated in Simulink.
+          </p>
+          <p>
+            The prototype allows realistic evaluation of control performance, communication latency, and distributed optimization under cyber–physical constraints. The developed platform serves as a control-oriented digital testbed for distributed energy systems, enabling rapid validation of advanced coordination strategies for next-generation DC microgrids.
           </p>
         </article>
 

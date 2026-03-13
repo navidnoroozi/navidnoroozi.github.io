@@ -29,16 +29,57 @@
 
     <div class="filters">
       <button class="filter active" data-filter="all">All</button>
-      <button class="filter active" data-filter="autodriving">Autonomous Driving</button>
+      <button class="filter active" data-filter="all">Autonomous Driving</button>
       <button class="filter" data-filter="cosim">Co-Simulation</button>
       <button class="filter" data-filter="distributed">Distributed Control</button>
       <button class="filter" data-filter="drives">Drives</button>
-      <button class="filter" data-filter="smartgrid">Smart Grids</button>
+      <button class="filter" data-filter="power">Smart Grids</button>
       <button class="filter" data-filter="power">Power Electronics</button>      
       <button class="filter" data-filter="future">Planned</button>
     </div>
 
     <div id="projectGrid" class="cards"></div>
+
+    <section class="projectFeature" id="communication-aware-dmpc" data-categories="all distributed cosim power">
+      <div class="projectFeature__header">
+        <div>
+          <span class="projectFeature__eyebrow">Featured Project</span>
+          <h2 class="projectFeature__title">Communication-Aware Distributed MPC for DC Microgrids</h2>
+          <p class="projectFeature__lead">A new project concept at the intersection of distributed control, co-simulation, and smart-grid operation.</p>
+        </div>
+        <div class="projectFeature__tags" aria-label="Project categories">
+          <span class="tag">All</span>
+          <span class="tag">Distributed Control</span>
+          <span class="tag">Co-Simulation</span>
+          <span class="tag">Smart Grids</span>
+        </div>
+      </div>
+
+      <div class="projectFeature__grid">
+        <article class="projectFeature__card">
+          <h3>Project Summary</h3>
+          <p>
+            This project investigates a communication-aware distributed model predictive control (DMPC)
+            framework for DC microgrids, where local controllers coordinate power-sharing and voltage regulation
+            while explicitly accounting for communication constraints such as latency, packet loss, bandwidth limits,
+            and asynchronous information exchange.
+          </p>
+          <p>
+            The goal is to combine distributed optimization, resilient control design, and high-fidelity co-simulation
+            to evaluate how communication quality affects closed-loop performance, stability margins, and scalability
+            in networked energy systems.
+          </p>
+        </article>
+
+        <aside class="projectFeature__card projectFeature__teaser">
+          <h3>Project Teaser</h3>
+          <div class="projectFeature__teaserBox" role="img" aria-label="Placeholder for project teaser visual">
+            <span>Teaser placeholder<br />Add image, animation, or short demo here</span>
+          </div>
+          <p class="projectFeature__hint">Suggested use: schematic of the DC microgrid, control architecture, or a co-simulation snapshot.</p>
+        </aside>
+      </div>
+    </section>
 
     <footer class="footer">
       <span class="muted">© <span id="year"></span> Dr. Navid Noroozi</span>

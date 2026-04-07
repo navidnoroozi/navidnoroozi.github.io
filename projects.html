@@ -1,11 +1,45 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Dr. Navid Noroozi</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Override grid layout for the cosim-formation section only.
+       Stack summary above teaser so the animation iframe gets full width. */
+    #cosim-formation .projectFeature__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #cosim-formation .projectFeature__teaser iframe {
+      width: 100%;
+      min-height: 660px;
+    }
+
+    #cosim-formation .projectFeature__teaserMedia {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    #cosim-formation .projectFeature__teaserMedia img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    #cosim-formation .projectFeature__teaserMedia p {
+      margin: 10px 0 0;
+      font-size: .92rem;
+    }
+  </style>
 </head>
+
 <body>
   <header class="top">
     <div class="container top__inner">
@@ -29,26 +63,90 @@
 
     <div class="filters">
       <button class="filter active" data-filter="all">All</button>
-      <button class="filter active" data-filter="all">Autonomous Driving</button>
+      <button class="filter" data-filter="autodriving">Autonomous Driving</button>
       <button class="filter" data-filter="cosim">Co-Simulation</button>
       <button class="filter" data-filter="distributed">Distributed Control</button>
       <button class="filter" data-filter="drives">Drives</button>
-      <button class="filter" data-filter="power">Smart Grids</button>
-      <button class="filter" data-filter="power">Power Electronics</button>      
       <button class="filter" data-filter="future">Planned</button>
+      <button class="filter" data-filter="power">Power Electronics</button>
+      <button class="filter" data-filter="robotics">Robotics</button>
+      <button class="filter" data-filter="smartgrids">Smart Grids</button>
     </div>
 
     <div id="projectGrid" class="cards"></div>
+
+    <section class="projectFeature" id="cosim-formation" data-categories="all distributed cosim power">
+      <div class="projectFeature__header">
+        <div>
+          <span class="projectFeature__eyebrow">Featured Project</span>
+          <h2 class="projectFeature__title">Distributed Hybrid MPC Formation Control for Multi-Robot Systems</h2>
+          <p class="projectFeature__lead">A new project concept at the intersection of distributed control,
+            co-simulation, and multi-agent systems.</p>
+        </div>
+        <div class="projectFeature__tags" aria-label="Project categories">
+          <span class="tag">Distributed Control</span>
+          <span class="tag">Co-Simulation</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Autonomous Driving</span>
+        </div>
+      </div>
+
+      <div class="projectFeature__grid">
+        <article class="projectFeature__card">
+          <h3>Project Summary</h3>
+          <p>
+            This project delivers an end-to-end software prototype for safe coordination of a team of mobile robots,
+            spanning rigorous theory, simulation, and hardware deployment. On the theoretical side, we develop a
+            distributed hybrid Model Predictive Control (MPC) scheme for multi-agent consensus and formation control
+            under time-varying directed communication, state and input constraints. Formation is recast as stabilization
+            of the agreement set via a geometric viewpoint: building on Moreau's convex-hull invariance condition, we
+            show that enforcing terminal inclusion in local neighbor convex hulls is necessary but not, in general,
+            sufficient for convergence — strict relative-interior placement is additionally required. A lexicographic
+            OCP selection rule resolves this gap and guarantees asymptotic convergence to a safe formation. Formation
+            control reduces to consensus through a shape-compensated coordinate transformation y_i = z_i − c_i, and a
+            five-mode explicit hybrid safety supervisor (modes F / C / O / CO / T) handles inter-agent collision
+            avoidance and obstacle avoidance on top of the nominal MPC law.
+          </p>
+          <p>
+            On the implementation side, the planning layer is realised as a modular ZMQ-based multi-process Python
+            application (coordinator, per-agent controller, and hybrid safety nodes) operating over a REQ/REP mesh.
+            Theoretical results are validated in a real-time Python ↔ MATLAB/Simulink co-simulation, where Python
+            executes the planning and safety layer while Simulink implements the lower-level unicycle motion-control
+            layer (heading P-controller + speed shaping) for four differential-drive robots. The two layers exchange
+            data each planning step via the <code style="font-size: 1.3em;">matlab.engine</code> API — Python writes velocity references into the MATLAB
+            workspace and reads back odometry, closing the loop through the actual unicycle dynamics. The co-simulation
+            platform is instrumented with structured CSV logging (planning, odometry, hybrid modes, health) for
+            diagnosis and reproducibility. The next step is hardware deployment on a team of four Raspberry Pi 4 /
+            ESP32-based differential-drive robots communicating over WiFi.
+          </p>
+        </article>
+
+        <aside class="projectFeature__card projectFeature__teaser">
+          <h3>Project Teaser</h3>
+          <iframe src="/assets/animations/cosim_dataflow_animation.html" title="Co-simulation data-flow animation"
+            style="width:100%;height:620px;border:none;border-radius:8px;display:block;" loading="lazy"></iframe>
+          <div class="projectFeature__teaserMedia">
+            <img src="/assets/animations/consensus_animation_with_state_machine.gif"
+              alt="Animated visualization of four robots moving on a 2D plane with their hybrid control modes"
+              loading="lazy">
+            <p>
+              Animated co-simulation snapshot showing the motion of four robots in the plane together with their active
+              hybrid control modes.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
     <section class="projectFeature" id="communication-aware-dmpc" data-categories="all distributed cosim power">
       <div class="projectFeature__header">
         <div>
           <span class="projectFeature__eyebrow">Featured Project</span>
           <h2 class="projectFeature__title">Communication-Aware Distributed MPC for DC Microgrids</h2>
-          <p class="projectFeature__lead">A new project concept at the intersection of distributed control, co-simulation, and smart-grid operation.</p>
+          <p class="projectFeature__lead">A new project concept at the intersection of distributed control,
+            co-simulation, and smart-grid operation.</p>
         </div>
         <div class="projectFeature__tags" aria-label="Project categories">
-          <span class="tag">All</span>
           <span class="tag">Distributed Control</span>
           <span class="tag">Co-Simulation</span>
           <span class="tag">Smart Grids</span>
@@ -59,21 +157,29 @@
         <article class="projectFeature__card">
           <h3>Project Summary</h3>
           <p>
-            This project develops a communication-aware distributed Model Predictive Control (MPC) framework together with a real-time software prototype for the coordinated operation of DC microgrids. The proposed approach enables voltage regulation and proportional current sharing among multiple converter-interfaced Distributed Generation Units (DGUs).
+            This project develops a communication-aware distributed Model Predictive Control (MPC) framework together
+            with a real-time software prototype for the coordinated operation of DC microgrids. The proposed approach
+            enables voltage regulation and proportional current sharing among multiple converter-interfaced Distributed
+            Generation Units (DGUs).
           </p>
           <p>
-            The control strategy is implemented in a real-time co-simulation environment, where distributed MPC controllers run in Python and communicate via a P2P Publish/Subscribe architecture, while the primary converter dynamics and PWM-based PI controllers of DC-DC buck converters are simulated in Simulink.
+            The control strategy is implemented in a real-time co-simulation environment, where distributed MPC
+            controllers run in Python and communicate via a P2P Publish/Subscribe architecture, while the primary
+            converter dynamics and PWM-based PI controllers of DC-DC buck converters are simulated in Simulink.
           </p>
           <p>
-            The prototype allows realistic evaluation of control performance, communication latency, and distributed optimization under cyber–physical constraints. The developed platform serves as a control-oriented digital testbed for distributed energy systems, enabling rapid validation of advanced coordination strategies for next-generation DC microgrids.
+            The prototype allows realistic evaluation of control performance, communication latency, and distributed
+            optimization under cyber–physical constraints. The developed platform serves as a control-oriented digital
+            testbed for distributed energy systems, enabling rapid validation of advanced coordination strategies for
+            next-generation DC microgrids.
           </p>
         </article>
 
         <aside class="projectFeature__card projectFeature__teaser">
           <h3>Project Teaser</h3>
           <div role="img" aria-label="Placeholder for project teaser visual">
-                <img src="/assets/img/dcmg_mpc_teaser.png" alt="Distributed MPC for DC Microgrids" 
-                  style="max-width:100%; width:auto; height:auto;">
+            <img src="/assets/img/dcmg_mpc_teaser.png" alt="Distributed MPC for DC Microgrids"
+              style="max-width:100%; width:auto; height:auto;">
           </div>
         </aside>
       </div>
@@ -86,4 +192,5 @@
 
   <script src="/assets/js/app.js"></script>
 </body>
+
 </html>

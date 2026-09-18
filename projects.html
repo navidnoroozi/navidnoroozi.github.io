@@ -75,6 +75,66 @@
 
     <div id="projectGrid" class="cards"></div>
 
+
+    <section class="projectFeature" id="bahnstrom-ems" data-categories="all distributed smartgrids power">
+      <div class="projectFeature__header">
+        <div>
+          <span class="projectFeature__eyebrow">Featured Project</span>
+          <h2 class="projectFeature__title">Data-driven Distributed Intraday Energy Management for 16.7-Hz Railway Power Systems</h2>
+          <p class="projectFeature__lead">
+            A two-layer energy-management framework combining centralized day-ahead planning with distributed
+            scenario-based intraday MPC for 16.7-Hz railway power networks.
+          </p>
+        </div>
+        <div class="projectFeature__tags" aria-label="Project categories">
+          <span class="tag">Distributed Control</span>
+          <span class="tag">Smart Grids</span>
+          <span class="tag">Railway Power Systems</span>
+          <span class="tag">Stochastic MPC</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="projectFeature__grid">
+        <article class="projectFeature__card">
+          <h3>Project Summary</h3>
+          <p>
+            This project develops a two-layer energy-management system for 16.7-Hz single-phase railway power networks
+            represented as interconnected control areas. A centralized hourly day-ahead plan is combined with recursive
+            distributed intraday scenario Model Predictive Control (MPC), using forecasts of tractive demand, available
+            regenerative energy and renewable generation together with measurements of wayside-storage energy. The
+            intraday planning problem is formulated as a risk-neutral convex stochastic optimization problem and solved
+            as sparse area-wise quadratic programs coordinated by consensus ADMM.
+          </p>
+          <p>
+            The accompanying <code>bahnstrom_ems</code> Python proof of concept implements the full workflow: timetable
+            processing and quarter-hour motoring/regenerative-power profiles, energy-price handling, deterministic
+            day-ahead planning, data-driven probabilistic forecasting and scenario generation, distributed intraday
+            optimization, closed-loop state propagation, and KPI/result logging. The software is designed for
+            reproducible numerical studies of distributed energy management in railway power systems.
+          </p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/navidnoroozi/bahnstrom_ems-public"
+              target="_blank" rel="noopener noreferrer">PoC software: bahnstrom_ems v0.9.1</a>
+          </div>
+        </article>
+
+        <aside class="projectFeature__card projectFeature__teaser">
+          <h3>Project Teaser</h3>
+          <div role="img" aria-label="Software architecture and workflow of the bahnstrom_ems proof-of-concept">
+            <img src="/assets/img/sw_arch_bahnstrom_ems.png"
+              alt="Software architecture and workflow of bahnstrom_ems for day-ahead and distributed intraday railway energy management"
+              style="max-width:100%; width:auto; height:auto; display:block; margin:0 auto;"
+              loading="lazy">
+          </div>
+          <p class="projectFeature__hint">
+            Software workflow from benchmark and economic inputs through day-ahead planning, forecasting,
+            scenario generation, distributed optimization, closed-loop execution, and scientific result generation.
+          </p>
+        </aside>
+      </div>
+    </section>
+
     <section class="projectFeature" id="cosim-formation" data-categories="all distributed cosim power">
       <div class="projectFeature__header">
         <div>

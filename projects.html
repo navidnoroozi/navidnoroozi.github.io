@@ -99,6 +99,130 @@
       font-size: .88rem;
       line-height: 1.45;
     }
+
+    /* Shared featured-project link icons */
+    .projectFeature__links {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .projectFeature__iconLink {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(122, 162, 255, .35);
+      border-radius: 10px;
+      background: rgba(122, 162, 255, .12);
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, opacity .12s ease;
+    }
+
+    .projectFeature__iconLink:hover {
+      text-decoration: none;
+      background: rgba(122, 162, 255, .18);
+      transform: translateY(-1px);
+    }
+
+    .projectFeature__iconLink svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .projectFeature__arxivMark {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: .70rem;
+      font-weight: 850;
+      letter-spacing: -.03em;
+      line-height: .9;
+    }
+
+    .projectFeature__partMark {
+      margin-top: 3px;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .projectFeature__iconLink--disabled {
+      opacity: .48;
+      cursor: default;
+      border-style: dashed;
+    }
+
+    .projectFeature__iconLink--disabled:hover {
+      background: rgba(122, 162, 255, .12);
+      transform: none;
+    }
+
+    /* Click-to-enlarge project images */
+    .projectFeature__teaser img {
+      cursor: zoom-in;
+    }
+
+    .projectFeature__teaser img:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .projectImageLightbox {
+      width: min(96vw, 1500px);
+      max-width: none;
+      max-height: 96vh;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 14px;
+      background: #0b1220;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .72);
+      overflow: hidden;
+    }
+
+    .projectImageLightbox::backdrop {
+      background: rgba(0, 0, 0, .82);
+      backdrop-filter: blur(3px);
+    }
+
+    .projectImageLightbox__inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-height: 96vh;
+      padding: 42px 14px 14px;
+    }
+
+    .projectImageLightbox__img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(96vh - 56px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .projectImageLightbox__close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      color: var(--text);
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -175,9 +299,49 @@
             optimization, closed-loop state propagation, and KPI/result logging. The software is designed for
             reproducible numerical studies of distributed energy management in railway power systems.
           </p>
-          <div class="cta">
-            <a class="btn" href="https://github.com/navidnoroozi/bahnstrom_ems-public"
-              target="_blank" rel="noopener noreferrer">PoC software: bahnstrom_ems v0.9.1</a>
+          <div class="projectFeature__links" aria-label="Project links">
+            <a class="projectFeature__iconLink"
+              href="https://github.com/navidnoroozi/bahnstrom_ems-public"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open the bahnstrom_ems project repository on GitHub"
+              title="GitHub repository">
+              <svg viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.64 5.47 7.72.4.08.55-.18.55-.39 0-.19-.01-.82-.01-1.5-2.23.49-2.7-1.09-2.7-1.09-.36-.94-.89-1.19-.89-1.19-.73-.5.05-.49.05-.49.8.06 1.22.84 1.22.84.71 1.23 1.87.88 2.33.67.07-.52.28-.88.5-1.08-1.78-.21-3.65-.91-3.65-4.02 0-.89.31-1.62.82-2.19-.08-.2-.36-1.04.08-2.16 0 0 .67-.22 2.2.84A7.45 7.45 0 0 1 8 3.95c.68 0 1.36.09 2 .27 1.53-1.06 2.2-.84 2.2-.84.44 1.12.16 1.96.08 2.16.51.57.82 1.3.82 2.19 0 3.12-1.88 3.81-3.67 4.01.29.25.54.74.54 1.49 0 1.08-.01 1.94-.01 2.2 0 .21.15.47.55.39A8.13 8.13 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/>
+              </svg>
+            </a>
+
+            <a class="projectFeature__iconLink"
+              href="https://arxiv.org/pdf/2609.21808"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open arXiv Part I — Theory"
+              title="arXiv Part I — Theory">
+              <span class="projectFeature__arxivMark" aria-hidden="true">
+                arXiv
+                <span class="projectFeature__partMark">I</span>
+              </span>
+            </a>
+
+            <a class="projectFeature__iconLink"
+              href="https://arxiv.org/pdf/2609.21802"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Open arXiv Part II — Software"
+              title="arXiv Part II — Software">
+              <span class="projectFeature__arxivMark" aria-hidden="true">
+                arXiv
+                <span class="projectFeature__partMark">II</span>
+              </span>
+            </a>
+
+            <span class="projectFeature__iconLink projectFeature__iconLink--disabled"
+              aria-label="arXiv Part III — Numerical Results; link forthcoming"
+              aria-disabled="true"
+              title="arXiv Part III — Numerical Results (link forthcoming)">
+              <span class="projectFeature__arxivMark" aria-hidden="true">
+                arXiv
+                <span class="projectFeature__partMark">III</span>
+              </span>
+            </span>
           </div>
         </article>
 
@@ -349,7 +513,63 @@
     </footer>
   </main>
 
+
+  <dialog id="projectImageLightbox" class="projectImageLightbox" aria-label="Enlarged project image">
+    <div class="projectImageLightbox__inner">
+      <button class="projectImageLightbox__close" type="button" aria-label="Close enlarged image">&times;</button>
+      <img class="projectImageLightbox__img" src="" alt="">
+    </div>
+  </dialog>
+
   <script src="/assets/js/app.js"></script>
+
+  <script>
+    (() => {
+      const dialog = document.getElementById("projectImageLightbox");
+      const enlargedImage = dialog?.querySelector(".projectImageLightbox__img");
+      const closeButton = dialog?.querySelector(".projectImageLightbox__close");
+
+      if (!dialog || !enlargedImage || !closeButton) return;
+
+      const openImage = (image) => {
+        const source = image.currentSrc || image.src;
+
+        if (typeof dialog.showModal !== "function") {
+          window.open(source, "_blank", "noopener,noreferrer");
+          return;
+        }
+
+        enlargedImage.src = source;
+        enlargedImage.alt = image.alt || "Enlarged project image";
+        dialog.showModal();
+      };
+
+      document.querySelectorAll(".projectFeature__teaser img").forEach((image) => {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `Enlarge image: ${image.alt || "project image"}`);
+
+        image.addEventListener("click", () => openImage(image));
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openImage(image);
+          }
+        });
+      });
+
+      closeButton.addEventListener("click", () => dialog.close());
+
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      dialog.addEventListener("close", () => {
+        enlargedImage.src = "";
+        enlargedImage.alt = "";
+      });
+    })();
+  </script>
 </body>
 
 </html>
